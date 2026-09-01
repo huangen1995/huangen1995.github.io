@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Huang - CV</title>
+    <style>
+        /* ---------- 全局样式 ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 30px;
+            line-height: 1.6;
+            color: #1e2a3a;
+            background: #fafafa;
+        }
+        /* ---------- 卡片效果 ---------- */
+        .container {
+            background: #ffffff;
+            padding: 40px 45px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        /* ---------- 标题与分割线 ---------- */
+        h1 {
+            font-size: 32px;
+            color: #0b2b40;
+            border-bottom: 3px solid #1e6f9f;
+            padding-bottom: 8px;
+            margin-bottom: 6px;
+        }
+        .subhead {
+            font-size: 16px;
+            color: #3d5a73;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 28px;
+        }
+        .subhead span {
+            white-space: nowrap;
+        }
+        .subhead a {
+            color: #1e6f9f;
+            text-decoration: none;
+        }
+        .subhead a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            font-size: 22px;
+            color: #0b2b40;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #d0dae6;
+            padding-bottom: 6px;
+        }
+        /* ---------- 列表与段落 ---------- */
+        ul {
+            padding-left: 22px;
+            margin-bottom: 6px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        p {
+            margin-bottom: 6px;
+        }
+        .item-title {
+            font-weight: 600;
+            color: #0b2b40;
+        }
+        .item-meta {
+            color: #3d5a73;
+            font-weight: normal;
+        }
+        .item-date {
+            float: right;
+            color: #5d6f83;
+            font-weight: normal;
+        }
+        /* 出版物条目 */
+        .pub-item {
+            margin-bottom: 10px;
+            padding-left: 0;
+            list-style-type: none;
+        }
+        .pub-item li {
+            margin-bottom: 6px;
+        }
+        .pub-item .pub-authors {
+            font-style: italic;
+        }
+        .pub-item .pub-journal {
+            font-weight: 500;
+        }
+        .pub-item a {
+            color: #1e6f9f;
+            text-decoration: none;
+            margin-left: 6px;
+        }
+        .pub-item a:hover {
+            text-decoration: underline;
+        }
+        /* 项目条目 */
+        .project {
+            margin-bottom: 18px;
+        }
+        .project .proj-title {
+            font-weight: 600;
+            color: #0b2b40;
+        }
+        .project .proj-advisor {
+            color: #3d5a73;
+            font-weight: normal;
+        }
+        .project .proj-date {
+            float: right;
+            color: #5d6f83;
+        }
+        .project ul {
+            margin-top: 4px;
+        }
+        /* 荣誉 & 技能 */
+        .honor-list, .skill-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .honor-list li, .skill-list li {
+            margin-bottom: 4px;
+        }
+        /* 清除浮动 */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            .subhead { flex-direction: column; gap: 4px; }
+            .item-date, .proj-date { float: none; display: block; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ==================== 个人信息 ==================== -->
+    <h1>EN HUANG</h1>
+    <div class="subhead">
+        <span>📍 Shenzhen, Guangdong Province, PRC</span>
+        <span>📧 <a href="mailto:he21@tsinghua.org.cn">he21@tsinghua.org.cn</a></span>
+        <span>📞 86-13278882845</span>
+        <span>🔗 ORCID: 0009-0001-8392-8925</span>
+    </div>
+
+    <!-- ==================== 研究兴趣 ==================== -->
+    <h2>RESEARCH INTERESTS</h2>
+    <p>Multi-modal Sensing, Electrical Tomography, Multiphase Flow Measurement, Reset Control, Target Tracking, Deep Learning, Data-driven Methods.</p>
+
+    <!-- ==================== 教育 ==================== -->
+    <h2>EDUCATION</h2>
+    <p>
+        <span class="item-title">Tsinghua University</span> – Shenzhen, China
+        <span class="item-date">2021.09 – 2024.06</span><br>
+        <span class="item-meta">Tsinghua Shenzhen International Graduate School, Master of Electronic and Information Engineering</span><br>
+        <span class="item-meta">GPA: 3.62/4.0</span>
+    </p>
+    <p style="margin-top:10px;">
+        <span class="item-title">Central South University</span> – Changsha, China
+        <span class="item-date">2017.09 – 2021.06</span><br>
+        <span class="item-meta">School of Automation, Bachelor of Automation</span><br>
+        <span class="item-meta">Weighted Average Score: 86.92/100</span>
+    </p>
+
+    <!-- ==================== 工作经历 ==================== -->
+    <h2>EMPLOYMENT EXPERIENCE</h2>
+    <p>
+        <span class="item-title">BYD Company Ltd.</span> – Shenzhen, China
+        <span class="item-date">2024.07 – 2025.03</span><br>
+        <span class="item-meta">Senior Software Engineer – Focusing on motor controller research and development</span>
+    </p>
+
+    <!-- ==================== 出版物 ==================== -->
+    <h2>PUBLICATIONS</h2>
+    <ul class="pub-item">
+        <li>[4] Luchao Song<sup>*</sup>, En Huang<sup>*</sup>, Sichen Du, Haitao He, Yi Li. <strong>Convolutional flowrate attention network: Flowrate measurement of gas-water two-phase flow with multi-sensor fusion and convolutional block attention module</strong>. <span class="pub-journal">Measurement: Energy</span>, 2026, 10:100100. (Equal contribution) <a href="#">[link]</a> <a href="#">[PDF]</a></li>
+        <li>[3] En Huang, Maomao Zhang, Yanan Zhang, Bing Chen, Lihui Peng, Yi Li. <strong>Online calibration of ERT based on impedance analysis in oil-water two-phase flow measurement</strong>. <span class="pub-journal">IEEE Transactions on Instrumentation and Measurement</span>, 2024, 73: 1502212. (Q1, IF=5.6) <a href="#">[link]</a></li>
+        <li>[2] En Huang, Bing Chen, Luchao Song, Yi Li, Lihui Peng. <strong>Measurement of the water-to-liquid ratio of oil-water two-phase flow for low flow rates and high water content</strong>. <span class="pub-journal">Measurement Science and Technology</span>, 2024, 35(6): 065014. (Q1, IF=2.7) <a href="#">[link]</a></li>
+        <li>[1] En Huang, Yi Cheng, Wenfeng Hu. <strong>Tracking Control of Multi-agent Systems Based on Reset Control (基于复位控制的多智能体系统跟踪控制)</strong>. <span class="pub-journal">Control Engineering of China (控制工程)</span>, 2022, 29(11): 2097-2102.</li>
+    </ul>
+
+    <!-- ==================== 研究项目 ==================== -->
+    <h2>RESEARCH PROJECTS</h2>
+
+    <div class="project clearfix">
+        <div>
+            <span class="proj-title">Measurement of the Flow Rate of Non-separated Gas-water Two-phase Flow</span>
+            <span class="proj-advisor">Advisor: Assoc. Prof. Yi Li (Tsinghua University)</span>
+            <span class="proj-date">2023.09 – 2024.01</span>
+        </div>
+        <ul>
+            <li>Developed an integrated approach to measure non-separated gas-water flow rates using Electrical Resistance Tomography (ERT) and Venturi meters.</li>
+            <li>Derived the expansion coefficient of flow based on real-time ERT water content measurements.</li>
+            <li>Conducted experimental validations under various flow conditions, and overcame several key technical obstacles.</li>
+        </ul>
+    </div>
+
+    <div class="project clearfix">
+        <div>
+            <span class="proj-title">Online Calibration of ERT Based on Impedance Analysis in Oil-water Two-phase Flow Measurement</span>
+            <span class="proj-advisor">Advisor: Assoc. Prof. Yi Li (Tsinghua University)</span>
+            <span class="proj-date">2023.09 – 2024.03</span>
+        </div>
+        <ul>
+            <li>Designed a data-driven framework combining the measurement position and frequency domain of ERT to predict water conductivity in oil-water flows.</li>
+            <li>Constructed a mapping model between ERT calibration values and experimental conductivity data, enabling dynamic adjustments in calibration.</li>
+            <li>Achieved online calibration relative error of no more than 10%.</li>
+        </ul>
+    </div>
+
+    <div class="project clearfix">
+        <div>
+            <span class="proj-title">Measurement of High Water-to-liquid Ratio and Low Flow Oil-water Two-phase Flow Based on Electrical Resistance Tomography Technology</span>
+            <span class="proj-advisor">(Sponsored by Shenzhen Science and Technology Program, JSGG20210802154006018)</span>
+            <span class="proj-date">2022.06 – 2024.03</span>
+        </div>
+        <ul>
+            <li>Addressed the challenges of accurate water content measurement under low flow rate conditions using ERT.</li>
+            <li>Conducted comprehensive experiments and developed algorithms to correct deviations in water-cut data with a relative error not exceeding 10%.</li>
+        </ul>
+    </div>
+
+    <div class="project clearfix">
+        <div>
+            <span class="proj-title">Research and Implementation of Target Tracking Algorithm Based on Reset Control Strategy</span>
+            <span class="proj-advisor">(Sponsored by National Natural Science Foundation of China, NSFC 61803392, 61890932)</span>
+            <span class="proj-date">2021.01 – 2021.05</span>
+        </div>
+        <ul>
+            <li>Proposed a novel reset control strategy to enhance tracking accuracy and reduce system regulation time.</li>
+            <li>Formulated and validated the control strategy using Lyapunov's stability theory.</li>
+            <li>Demonstrated system feasibility in multi-agent scenarios, achieving a 20% reduction in settling time compared to conventional methods.</li>
+        </ul>
+    </div>
+
+    <!-- ==================== 荣誉与奖项 ==================== -->
+    <h2>HONORS &amp; AWARDS</h2>
+    <ul class="honor-list">
+        <li>– 3rd Prize for 9th Professional Practice, Tsinghua SIGS, 2024</li>
+        <li>– 3rd Prize for Academic Year Scholarship, Central South University, 2018, 2019 &amp; 2020</li>
+    </ul>
+
+    <!-- ==================== 技能 ==================== -->
+    <h2>SKILLS</h2>
+    <ul class="skill-list">
+        <li><strong>Programming &amp; Software:</strong> Python, Matlab, Comsol, LaTeX, and so on.</li>
+        <li><strong>Language:</strong> Chinese (Native), English (IELTS 6.5).</li>
+    </ul>
+
+</div>
+</body>
+</html>

@@ -85,7 +85,30 @@
             white-space: nowrap;
         }
 
-        .proj-header {
+        /* 项目标题 - 单独一行 */
+        .proj-title-line {
+            font-weight: 700;
+            color: #0b2b40;
+            margin-bottom: 2px;
+        }
+        
+        /* 导师 + 时间 同一行，左对齐 + 右对齐 */
+        .proj-meta-line {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+        .proj-advisor {
+            color: #3d5a73;
+        }
+        .proj-date {
+            color: #5d6f83;
+            white-space: nowrap;
+        }
+
+        /* .proj-header {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -104,7 +127,7 @@
         .proj-date {
             color: #5d6f83;
             white-space: nowrap;
-        }
+        } */
 
         ul {
             padding-left: 22px;

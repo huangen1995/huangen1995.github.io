@@ -117,38 +117,27 @@
             margin-bottom: 4px;
         }
 
+        /* 出版物列表 - 悬挂缩进 */
         .pub-item {
             list-style: none;
             padding-left: 0;
             margin-bottom: 8px;
-            counter-reset: list-item;
         }
         .pub-item li {
-            display: flex;             /* 使用 flex 布局，完美对齐编号和文字 */
-            align-items: baseline;     /* 编号与第一行文字基线对齐 */
             margin-bottom: 6px;
+            padding-left: 2em;        /* 整体缩进2个字符 */
+            text-indent: -2em;        /* 第一行回退，形成悬挂效果 */
             line-height: 1.5;
         }
-        .pub-item li::before {
-            content: "[" counter(list-item) "]";   /* 生成 [数字] 格式 */
-            flex-shrink: 0;            /* 编号宽度固定，不收缩 */
-            width: 3.5em;              /* 固定宽度，保证所有编号占位一致 */
-            text-align: right;         /* 编号右对齐，数字靠右 */
-            margin-right: 0.5em;       /* 与文字间距 */
-            font-weight: normal;
-        }
-        .pub-item li .pub-text {
-            flex: 1;                   /* 文字区域自动填充剩余宽度 */
-            text-align: justify;       /* 可选，两端对齐更整齐 */
-        }
-        .pub-item li a {
+        .pub-item a {
             color: #1e6f9f;
             text-decoration: none;
             margin-left: 3px;
         }
-        .pub-item li a:hover {
+        .pub-item a:hover {
             text-decoration: underline;
         }
+        
         .honor-list, .skill-list {
             list-style: none;
             padding-left: 0;

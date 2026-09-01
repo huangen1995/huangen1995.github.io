@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>En Huang - CV</title>
     <style>
-        /* ---------- 基础样式 (针对电脑/手机屏幕) ---------- */
+        /* ---------- 全局样式 ---------- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: "Times New Roman", Times, serif;  /* 全部改为 Times New Roman */
             max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
-            line-height: 1.6;
+            line-height: 1.5;          /* 稍微调紧，更像 Word 默认 */
+            font-size: 12pt;            /* 设置基础字号为 12pt */
             color: #1e2a3a;
             background: #fafafa;
         }
@@ -29,19 +30,20 @@
 
         /* 标题栏 */
         h1 {
-            font-size: 32px;
+            font-size: 28pt;
             color: #0b2b40;
-            border-bottom: 3px solid #1e6f9f;
-            padding-bottom: 8px;
-            margin-bottom: 6px;
+            border-bottom: 2px solid #1e6f9f;
+            padding-bottom: 6px;
+            margin-bottom: 4px;
+            font-weight: bold;
         }
         .subhead {
-            font-size: 15px;
+            font-size: 11pt;
             color: #3d5a73;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             display: flex;
             flex-wrap: wrap;
-            gap: 8px 25px;
+            gap: 6px 20px;
         }
         .subhead a {
             color: #1e6f9f;
@@ -52,24 +54,25 @@
         }
 
         h2 {
-            font-size: 22px;
+            font-size: 16pt;
             color: #0b2b40;
-            margin-top: 32px;
-            margin-bottom: 12px;
+            margin-top: 24px;
+            margin-bottom: 8px;
             border-bottom: 1px solid #d0dae6;
-            padding-bottom: 6px;
+            padding-bottom: 4px;
+            font-weight: bold;
         }
 
-        /* 条目布局 - 使用 Flex 布局，日期永远在右边 */
+        /* 条目布局 - 使用 Flex 布局，日期在右边 */
         .entry {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
         .entry-title {
-            font-weight: 600;
+            font-weight: 700;
             color: #0b2b40;
         }
         .entry-meta {
@@ -79,19 +82,18 @@
         .entry-date {
             color: #5d6f83;
             font-weight: normal;
-            white-space: nowrap; /* 防止日期折行 */
+            white-space: nowrap;
         }
 
-        /* 项目标题（带顾问信息） */
         .proj-header {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
         .proj-title {
-            font-weight: 600;
+            font-weight: 700;
             color: #0b2b40;
         }
         .proj-advisor {
@@ -106,23 +108,22 @@
 
         ul {
             padding-left: 22px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         li {
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
         p {
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
-        /* 出版物列表 */
         .pub-item {
             list-style: none;
             padding-left: 0;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .pub-item li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .pub-item a {
             color: #1e6f9f;
@@ -138,18 +139,20 @@
             padding-left: 0;
         }
         .honor-list li, .skill-list li {
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         /* ============================================= */
-        /* 重要！针对打印/存PDF的专门优化 (核心修复)    */
+        /* 打印/PDF 专用样式 - 强制 Times New Roman    */
         /* ============================================= */
         @media print {
-            /* 1. 清除屏幕上的背景色和阴影，节省墨水，只留白纸黑字 */
             body {
+                font-family: "Times New Roman", Times, serif !important;
                 background: white;
                 margin: 0.5cm auto;
                 padding: 0;
+                font-size: 11pt;          /* 打印时略小一点，更适合A4 */
+                line-height: 1.4;
             }
             .container {
                 box-shadow: none;
@@ -157,32 +160,20 @@
                 padding: 20px 30px;
                 background: white;
             }
-
-            /* 2. 强制所有条目保持在同一页，避免标题和内容被割裂 */
             .entry, .proj-header, .project {
                 break-inside: avoid;
                 page-break-inside: avoid;
             }
-
-            /* 3. 打印时日期必须待在右边，且加大间距保证清晰 */
             .entry-date, .proj-date {
                 color: #000;
-                font-weight: normal;
             }
-
-            /* 4. 调整标题大小，更适合A4纸阅读 */
-            h1 { font-size: 28px; }
-            h2 { font-size: 18px; margin-top: 20px; }
-            .subhead { font-size: 12px; gap: 4px 15px; }
-            body { font-size: 12px; line-height: 1.5; }
-            
-            /* 5. 确保链接文字显示正常（PDF中无法点击，但保留颜色） */
+            h1 { font-size: 24pt; }
+            h2 { font-size: 14pt; margin-top: 18px; }
+            .subhead { font-size: 10pt; gap: 4px 12px; }
             a {
                 color: #000;
                 text-decoration: none;
             }
-            
-            /* 6. 强制项目符号在PDF中显示 */
             ul { padding-left: 18px; }
         }
 

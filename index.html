@@ -119,28 +119,23 @@
 
         /* 出版物列表 - 自动倒序编号 + 悬挂缩进 */
         .pub-item {
-            list-style: none;          /* 隐藏默认的 "4." 样式 */
+            list-style: none;           /* 去掉默认的 "4." 样式 */
             padding-left: 0;
-            margin-bottom: 8px;
-            counter-reset: list-item;  /* 重置计数器（但 <ol reversed> 会自动处理，这里可省略） */
+            margin-bottom: 10px;
         }
         .pub-item li {
-            display: flex;             /* 使用 flex 布局，完美对齐编号和文字 */
-            align-items: baseline;     /* 编号与第一行文字基线对齐 */
-            margin-bottom: 6px;
-            line-height: 1.5;
+            display: flex;              /* flex 使编号和文字分列对齐 */
+            align-items: baseline;      /* 基线对齐，让编号和第一行文字在一条线上 */
+            margin-bottom: 8px;
+            line-height: 1.6;
         }
         .pub-item li::before {
-            content: "[" counter(list-item) "]";   /* 生成 [数字] 格式 */
-            flex-shrink: 0;            /* 编号宽度固定，不收缩 */
-            width: 3.5em;              /* 固定宽度，保证所有编号占位一致 */
-            text-align: right;         /* 编号右对齐，数字靠右 */
-            margin-right: 0.5em;       /* 与文字间距 */
+            content: "[" counter(list-item) "]";  /* 利用 counter(list-item) 获取当前序号 */
+            flex-shrink: 0;             /* 编号宽度固定，不压缩 */
+            width: 3.2em;               /* 固定宽度，保证所有编号占位一致（如 [4] 和 [10] 对齐） */
+            text-align: right;          /* 编号右对齐，看起来整齐 */
+            margin-right: 0.5em;        /* 与文字之间的间距 */
             font-weight: normal;
-        }
-        .pub-item li .pub-text {
-            flex: 1;                   /* 文字区域自动填充剩余宽度 */
-            text-align: justify;       /* 可选，两端对齐更整齐 */
         }
         .pub-item li a {
             color: #1e6f9f;
@@ -243,28 +238,19 @@
     <p style="margin-top:0;">Senior Software Engineer – Focusing on motor controller research and development</p>
 
     <!-- ==================== 出版物 ==================== -->
-    <!-- ==================== 出版物 ==================== -->
     <h2>PUBLICATIONS</h2>
     <ol class="pub-item" reversed>
         <li>
-            <span class="pub-text">
                 Luchao Song<sup>*</sup>, En Huang<sup>*</sup>, Sichen Du, Haitao He, Yi Li. <strong>Convolutional flowrate attention network: Flowrate measurement of gas-water two-phase flow with multi-sensor fusion and convolutional block attention module</strong>. <em>Measurement: Energy</em>, 2026, 10:100100. (Equal contribution) <a href="https://www.sciencedirect.com/science/article/pii/S2950345026000163">[link]</a>
-            </span>
         </li>
         <li>
-            <span class="pub-text">
                 En Huang, Maomao Zhang, Yanan Zhang, Bing Chen, Lihui Peng, Yi Li. <strong>Online calibration of ERT based on impedance analysis in oil-water two-phase flow measurement</strong>. <em>IEEE Transactions on Instrumentation and Measurement</em>, 2024, 73: 1502212. (Q1, IF=5.6) <a href="https://ieeexplore.ieee.org/abstract/document/10530105">[link]</a>
-            </span>
         </li>
         <li>
-            <span class="pub-text">
                 En Huang, Bing Chen, Luchao Song, Yi Li, Lihui Peng. <strong>Measurement of the water-to-liquid ratio of oil-water two-phase flow for low flow rates and high water content</strong>. <em>Measurement Science and Technology</em>, 2024, 35(6): 065014. (Q1, IF=2.7) <a href="https://iopscience.iop.org/article/10.1088/1361-6501/ad3180">[link]</a>
-            </span>
         </li>
         <li>
-            <span class="pub-text">
                 En Huang, Yi Cheng, Wenfeng Hu. <strong>Tracking Control of Multi-agent Systems Based on Reset Control (基于复位控制的多智能体系统跟踪控制)</strong>. <em>Control Engineering of China (控制工程)</em>, 2022, 29(11): 2097-2102.
-            </span>
         </li>
     </ol>
 

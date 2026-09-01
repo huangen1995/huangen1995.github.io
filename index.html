@@ -121,22 +121,34 @@
             list-style: none;
             padding-left: 0;
             margin-bottom: 8px;
+            counter-reset: list-item;
         }
         .pub-item li {
-          margin-bottom: 6px;
-          padding-left: 2em;        /* 整体缩进2个字符 */
-          text-indent: -2em;        /* 第一行回退，形成悬挂效果 */
-          line-height: 1.5;
+            display: flex;             /* 使用 flex 布局，完美对齐编号和文字 */
+            align-items: baseline;     /* 编号与第一行文字基线对齐 */
+            margin-bottom: 6px;
+            line-height: 1.5;
         }
-        .pub-item a {
+        .pub-item li::before {
+            content: "[" counter(list-item) "]";   /* 生成 [数字] 格式 */
+            flex-shrink: 0;            /* 编号宽度固定，不收缩 */
+            width: 3.5em;              /* 固定宽度，保证所有编号占位一致 */
+            text-align: right;         /* 编号右对齐，数字靠右 */
+            margin-right: 0.5em;       /* 与文字间距 */
+            font-weight: normal;
+        }
+        .pub-item li .pub-text {
+            flex: 1;                   /* 文字区域自动填充剩余宽度 */
+            text-align: justify;       /* 可选，两端对齐更整齐 */
+        }
+        .pub-item li a {
             color: #1e6f9f;
             text-decoration: none;
             margin-left: 3px;
         }
-        .pub-item a:hover {
+        .pub-item li a:hover {
             text-decoration: underline;
         }
-
         .honor-list, .skill-list {
             list-style: none;
             padding-left: 0;
@@ -231,10 +243,10 @@
     <!-- ==================== 出版物 ==================== -->
     <h2>PUBLICATIONS</h2>
     <ul class="pub-item">
-        <li>[4] Luchao Song<sup>*</sup>, En Huang<sup>*</sup>, Sichen Du, Haitao He, Yi Li. <strong>Convolutional flowrate attention network: Flowrate measurement of gas-water two-phase flow with multi-sensor fusion and convolutional block attention module</strong>. <em>Measurement: Energy</em>, 2026, 10:100100. (Equal contribution) <a href="https://www.sciencedirect.com/science/article/pii/S2950345026000163">[link]</a> </li>
-        <li>[3] En Huang, Maomao Zhang, Yanan Zhang, Bing Chen, Lihui Peng, Yi Li. <strong>Online calibration of ERT based on impedance analysis in oil-water two-phase flow measurement</strong>. <em>IEEE Transactions on Instrumentation and Measurement</em>, 2024, 73: 1502212. (Q1, IF=5.6) <a href="https://ieeexplore.ieee.org/abstract/document/10530105">[link]</a></li>
-        <li>[2] En Huang, Bing Chen, Luchao Song, Yi Li, Lihui Peng. <strong>Measurement of the water-to-liquid ratio of oil-water two-phase flow for low flow rates and high water content</strong>. <em>Measurement Science and Technology</em>, 2024, 35(6): 065014. (Q1, IF=2.7) <a href="https://iopscience.iop.org/article/10.1088/1361-6501/ad3180">[link]</a></li>
-        <li>[1] En Huang, Yi Cheng, Wenfeng Hu. <strong>Tracking Control of Multi-agent Systems Based on Reset Control (基于复位控制的多智能体系统跟踪控制)</strong>. <em>Control Engineering of China (控制工程)</em>, 2022, 29(11): 2097-2102.</li>
+        <li>Luchao Song<sup>*</sup>, En Huang<sup>*</sup>, Sichen Du, Haitao He, Yi Li. <strong>Convolutional flowrate attention network: Flowrate measurement of gas-water two-phase flow with multi-sensor fusion and convolutional block attention module</strong>. <em>Measurement: Energy</em>, 2026, 10:100100. (Equal contribution) <a href="https://www.sciencedirect.com/science/article/pii/S2950345026000163">[link]</a> </li>
+        <li>En Huang, Maomao Zhang, Yanan Zhang, Bing Chen, Lihui Peng, Yi Li. <strong>Online calibration of ERT based on impedance analysis in oil-water two-phase flow measurement</strong>. <em>IEEE Transactions on Instrumentation and Measurement</em>, 2024, 73: 1502212. (Q1, IF=5.6) <a href="https://ieeexplore.ieee.org/abstract/document/10530105">[link]</a></li>
+        <li>En Huang, Bing Chen, Luchao Song, Yi Li, Lihui Peng. <strong>Measurement of the water-to-liquid ratio of oil-water two-phase flow for low flow rates and high water content</strong>. <em>Measurement Science and Technology</em>, 2024, 35(6): 065014. (Q1, IF=2.7) <a href="https://iopscience.iop.org/article/10.1088/1361-6501/ad3180">[link]</a></li>
+        <li>En Huang, Yi Cheng, Wenfeng Hu. <strong>Tracking Control of Multi-agent Systems Based on Reset Control (基于复位控制的多智能体系统跟踪控制)</strong>. <em>Control Engineering of China (控制工程)</em>, 2022, 29(11): 2097-2102.</li>
     </ul>
 
     <!-- ==================== 研究项目 ==================== -->

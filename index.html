@@ -117,32 +117,34 @@
             margin-bottom: 4px;
         }
 
-        /* 出版物列表 - 自动倒序编号 + 悬挂缩进 */
-        .pub-item {
-            list-style: none;           /* 去掉默认的 "4." 样式 */
+        /* 出版物列表 - 由 JS 自动生成编号，样式配合 flex 实现悬挂缩进 */
+        .pub-list {
+            list-style: none;
             padding-left: 0;
             margin-bottom: 10px;
         }
-        .pub-item li {
-            display: flex;              /* flex 使编号和文字分列对齐 */
-            align-items: baseline;      /* 基线对齐，让编号和第一行文字在一条线上 */
+        .pub-list li {
+            display: flex;
+            align-items: baseline;
             margin-bottom: 8px;
             line-height: 1.6;
         }
-        .pub-item li::before {
-            content: "[" counter(list-item) "]";  /* 利用 counter(list-item) 获取当前序号 */
-            flex-shrink: 0;             /* 编号宽度固定，不压缩 */
-            width: 3.2em;               /* 固定宽度，保证所有编号占位一致（如 [4] 和 [10] 对齐） */
-            text-align: right;          /* 编号右对齐，看起来整齐 */
-            margin-right: 0.5em;        /* 与文字之间的间距 */
+        .pub-list .pub-num {
+            flex-shrink: 0;
+            width: 3.2em;
+            text-align: right;
+            margin-right: 0.5em;
             font-weight: normal;
         }
-        .pub-item li a {
+        .pub-list .pub-content {
+            flex: 1;
+        }
+        .pub-list .pub-content a {
             color: #1e6f9f;
             text-decoration: none;
             margin-left: 3px;
         }
-        .pub-item li a:hover {
+        .pub-list .pub-content a:hover {
             text-decoration: underline;
         }
         
@@ -238,7 +240,7 @@
     <p style="margin-top:0;">Senior Software Engineer – Focusing on motor controller research and development</p>
 
     <!-- ==================== 出版物 ==================== -->
-    <h2>PUBLICATIONS</h2>
+    <!-- <h2>PUBLICATIONS</h2>
     <ol class="pub-item" reversed>
         <li>
                 Luchao Song<sup>*</sup>, En Huang<sup>*</sup>, Sichen Du, Haitao He, Yi Li. <strong>Convolutional flowrate attention network: Flowrate measurement of gas-water two-phase flow with multi-sensor fusion and convolutional block attention module</strong>. <em>Measurement: Energy</em>, 2026, 10:100100. (Equal contribution) <a href="https://www.sciencedirect.com/science/article/pii/S2950345026000163">[link]</a>
@@ -252,15 +254,15 @@
         <li>
                 En Huang, Yi Cheng, Wenfeng Hu. <strong>Tracking Control of Multi-agent Systems Based on Reset Control (基于复位控制的多智能体系统跟踪控制)</strong>. <em>Control Engineering of China (控制工程)</em>, 2022, 29(11): 2097-2102.
         </li>
-    </ol>
+    </ol> -->
 
-    <!-- <h2>PUBLICATIONS</h2>
-    <ul class="pub-item">
+    <h2>PUBLICATIONS</h2>
+    <ul class="pub-list">
         <li>Luchao Song<sup>*</sup>, En Huang<sup>*</sup>, Sichen Du, Haitao He, Yi Li. <strong>Convolutional flowrate attention network: Flowrate measurement of gas-water two-phase flow with multi-sensor fusion and convolutional block attention module</strong>. <em>Measurement: Energy</em>, 2026, 10:100100. (Equal contribution) <a href="https://www.sciencedirect.com/science/article/pii/S2950345026000163">[link]</a> </li>
         <li>En Huang, Maomao Zhang, Yanan Zhang, Bing Chen, Lihui Peng, Yi Li. <strong>Online calibration of ERT based on impedance analysis in oil-water two-phase flow measurement</strong>. <em>IEEE Transactions on Instrumentation and Measurement</em>, 2024, 73: 1502212. (Q1, IF=5.6) <a href="https://ieeexplore.ieee.org/abstract/document/10530105">[link]</a></li>
         <li>En Huang, Bing Chen, Luchao Song, Yi Li, Lihui Peng. <strong>Measurement of the water-to-liquid ratio of oil-water two-phase flow for low flow rates and high water content</strong>. <em>Measurement Science and Technology</em>, 2024, 35(6): 065014. (Q1, IF=2.7) <a href="https://iopscience.iop.org/article/10.1088/1361-6501/ad3180">[link]</a></li>
         <li>En Huang, Yi Cheng, Wenfeng Hu. <strong>Tracking Control of Multi-agent Systems Based on Reset Control (基于复位控制的多智能体系统跟踪控制)</strong>. <em>Control Engineering of China (控制工程)</em>, 2022, 29(11): 2097-2102.</li>
-    </ul> -->
+    </ul>
 
 
     <!-- ==================== 研究项目 ==================== -->
@@ -332,5 +334,23 @@
     </ul>
 
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var list = document.querySelector('.pub-list');
+        if (!list) return;
+        var items = list.querySelectorAll('li');
+        var total = items.length;
+        items.forEach(function(li, index) {
+            var num = total - index; // 倒序
+            // 如果已有 .pub-num 则删除（防止重复）
+            var old = li.querySelector('.pub-num');
+            if (old) old.remove();
+            var span = document.createElement('span');
+            span.className = 'pub-num';
+            span.textContent = '[' + num + ']';
+            li.prepend(span);
+        });
+    });
+</script>
 </body>
 </html>

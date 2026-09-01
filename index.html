@@ -138,6 +138,9 @@
         }
         .pub-list .pub-content {
             flex: 1;
+            min-width: 0;      /* 允许内容收缩换行 */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         .pub-list .pub-content a {
             color: #1e6f9f;
